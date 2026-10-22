@@ -1,0 +1,37 @@
+{
+  "name": "@smarthotel/api",
+  "description": "SmartHotel Express API workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "build": "node --check src/server.js",
+    "test": "vitest run",
+    "db:create": "node src/db/create-database.js",
+    "db:migrate": "knex --knexfile knexfile.js migrate:latest",
+    "db:rollback": "knex --knexfile knexfile.js migrate:rollback",
+    "db:seed": "knex --knexfile knexfile.js seed:run",
+    "db:seed:demo": "knex --knexfile knexfile.js seed:run --specific=demo.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "knex": "^3.3.0",
+    "mysql2": "^3.14.0",
+    "pdfkit": "^0.20.2",
+    "pino": "^9.6.0",
+    "socket.io": "^4.8.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.0",
+    "vitest": "^4.1.12"
+  }
+}

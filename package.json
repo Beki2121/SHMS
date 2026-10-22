@@ -1,0 +1,29 @@
+{
+  "name": "smarthotel-ethiopia",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "db:migrate": "npm run db:migrate --workspace @smarthotel/api",
+    "db:rollback": "npm run db:rollback --workspace @smarthotel/api",
+    "db:seed": "npm run db:seed --workspace @smarthotel/api",
+    "db:seed:demo": "npm run db:seed:demo --workspace @smarthotel/api",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm --workspace @smarthotel/api run dev",
+    "dev:web": "npm --workspace @smarthotel/web run dev",
+    "db:create": "npm --workspace @smarthotel/api run db:create",
+    "test": "npm --workspace @smarthotel/api test && npm --workspace @smarthotel/web test",
+    "lint": "eslint .",
+    "build": "npm --workspace @smarthotel/api run build && npm --workspace @smarthotel/web run build",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3"
+  },
+  "engines": { "node": ">=20 <23", "npm": ">=10" }
+}
