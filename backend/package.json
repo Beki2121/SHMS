@@ -28,7 +28,7 @@
     "pdfkit": "^0.20.2",
     "pino": "^9.6.0",
     "socket.io": "^4.8.1",
-    "zod": "^3.24.2"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "supertest": "^7.1.0",
